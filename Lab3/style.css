@@ -1,4 +1,8 @@
-body {font-family: arial, sans-serif}
+body {font-family: arial, sans-serif
+padding auto;
+color: black;
+background-color:orange;
+}
 nav {font-weight: bold;
     color: black;
     border: 2px solid orange;
