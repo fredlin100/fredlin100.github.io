@@ -28,3 +28,9 @@ nav ul li {border-right: 2px solid orange;
 padding: 10px;}
 nav ul li:hover {background-color: rgb(234, 220, 195);}
 a {text-decoration: none;}
+
+@media screen and (min-width: 480px){
+    body{
+        background-color: pink;
+    }
+}
