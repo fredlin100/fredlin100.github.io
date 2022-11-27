@@ -1,0 +1,32 @@
+span{
+    color: yellow;
+    border: 1px solid black;
+}
+.extra span{
+    color: inherit;
+}
+#myHeader{
+    text-decoration: underline;
+    background-color: orange;
+    padding: 40px;
+    text-align: center;
+}
+.illustration{
+    border:1px solid black;
+    margin-top:50px;
+    margin-bottom:50px;
+    margin-right:150px;
+    margin-left:80px;
+    background-color:lightblue;
+    color: rgb(206, 134, 1);
+    font-style: italic;
+}
+body{
+
+    background-image:url('Bee.png');
+    background-repeat:repeat-y;
+    background-attachment:fixed;
+    background-position:bottom right;
+}
+
+
