@@ -1,0 +1,14 @@
+#css_table {
+    display:table;
+}
+.css_tr {
+    display: table-row;
+}
+.css_td {
+    display: table-cell;
+}
+body {font-family: arial, sans-serif;
+    color: black;;
+    margin-left:auto;
+    margin-right:auto;
+    }
