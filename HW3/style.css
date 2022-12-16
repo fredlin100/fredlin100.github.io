@@ -8,6 +8,12 @@
     float:left;
     width:50%;
 }
+#input1{
+    width:64%;
+}
+#input4{
+    width:85%;
+}
 body {
 
     font-family: arial, sans-serif;
