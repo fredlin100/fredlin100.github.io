@@ -1,6 +1,3 @@
-#css_table{
-    width:100%;
-}
 
 .css_tr {
     float:left;
@@ -18,8 +15,8 @@ body {
     margin-left:auto;
     margin-right:auto;
     width: 100%;
-    margin:25%;
-    height:5%;
+    margin:100%;
+    height:100%;
     }
 
 form{
