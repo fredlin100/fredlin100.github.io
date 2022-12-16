@@ -2,7 +2,7 @@
 .css_tr {
     float:left;
     width:100%;
-    position:top;
+    
 }
 .css_td {
     float:left;
@@ -14,7 +14,7 @@ body {
     color: black;;
     margin-left:auto;
     margin-right:auto;
-    width: 50%;
+    width: 100%;
     margin:25%;
     height:5%;
     }
