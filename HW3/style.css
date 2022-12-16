@@ -1,14 +1,30 @@
-#css_table {
-    display:table;
-}
+
 .css_tr {
-    display: table-row;
+    float:left;
+    
 }
 .css_td {
-    display: table-cell;
+    float:right;
+    
 }
-body {font-family: arial, sans-serif;
+body {
+
+    font-family: arial, sans-serif;
     color: black;;
     margin-left:auto;
     margin-right:auto;
+    width: 50%;
+    margin:25%;
+    height:5%;
+    }
+
+form{
+    margin-left:auto;
+    margin-right:auto;
+    width:auto;
+}
+    @media screen and (max-width: 500px){
+        body{
+            background-color: pink;
+        }
     }
