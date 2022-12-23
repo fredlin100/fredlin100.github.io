@@ -7,42 +7,51 @@
 </head>
 <body>
      
-    <form action = "#">
-        <input id = "rollButton" type = "button">
-    </form>>
+   
     
-    <img id = "die1" src = "die1.png" alt = "blank image">
-    <img id = "die2" src = "die2.png" alt = "blank image">
-    <img id = "die3" src = "die3.png" alt = "blank image">
-    <img id = "die4" src = "die4.png" alt = "blank image">
-    <img id = "die5" src = "die5.png" alt = "blank image">
-    <img id = "die6" src = "die6.png" alt = "blank image">
-    <img id = "die7" src = "die1.png" alt = "blank image">    
-    <img id = "die8" src = "die2.png" alt = "blank image">
-    <img id = "die9" src = "die3.png" alt = "blank image">
-    <img id = "die10" src = "die4.png" alt = "blank image">
-    <img id = "die11" src = "die5.png" alt = "blank image">
-    <img id = "die12" src = "die6.png" alt = "blank image">
+    <p> <img id = "die1" src = "die1.png" alt = "die 1 image">
+        <img id = "die2" src = "die1.png" alt = "die 2 image">
+        <img id = "die3" src = "die1.png" alt = "die 3 image">
+        <img id = "die4" src = "die1.png" alt = "die 4 image">
+        <img id = "die5" src = "die1.png" alt = "die 5 image">
+        <img id = "die6" src = "die1.png" alt = "die 6 image"></p>
+    <p> <img id = "die7" src = "die1.png" alt = "die 7 image">
+        <img id = "die8" src = "die1.png" alt = "die 8 image">
+        <img id = "die9" src = "die1.png" alt = "die 9 image">
+        <img id = "die10" src = "die1.png" alt = "die 10 image">
+        <img id = "diell" src = "die1.png" alt = "die 11 image">
+        <img id = "die12" src = "die1.png" alt = "die 12 image"></p>
+        
+    <form action ="#">
+        <input id = "rollButton" type = "button" value = "Roll Dice">
+    </form>
+        <div id = "frequencyTableDiv"></div>
 
     <script>
 
         function start(){
             var button = document.getElementById( "rollButton" );
-            button. addEventListener( "click", rollDice );
-            die1Image = document.getElementById("die1");
-            die2Image = document.getElementById("die2");
-            die3Image = document.getElementById("die3");
-            die4Image = document.getelementById("die4");
-            die5Image = document.getelementById("die5");
-            die6Image = document.getelementById("die6");
-            die7Image = document.getelementById("die7");
-            die8Image = document.getelementById("die8");
-            die9Image = document.getelementById("die9");
-            die10Image = document.getelementById("die10");
-            die11Image = document.getelementById("die11");
-            die12Image = document.getelementById("die12");
+            button.addEventListener( "click", rollDice, false);
         }
 
+        function rollDice(){
+            var face;
+            for(var i = 1; i <= 12; ++i){
+                face = Math.floor(1+Math.random()*6);
+                setImage(i, face);
+                tallyRolls(face);
+                ++totalDice;
+            }
+            updateFrequencyTable();
+        }
+
+        function setImage(dieNumber, face){
+           var die1Image = document.getElementById("die" + dieNumber);
+           dieImage.setAttribute("src", "die" + face + ".png");
+           dieImage.setAttribute("alt", "die with" + face + "spot(s)");
+        }
+
+        
         function rollDice(){
             setImage(die1Image);
             setImage(die2Image);
