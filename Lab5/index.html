@@ -25,9 +25,18 @@
     <form action ="#">
         <input id = "rollButton" type = "button" value = "Roll Dice">
     </form>
-        <div id = "frequencyTableDiv"></div>
+
+    <div id = "frequencyTableDiv"></div>
 
     <script>
+
+        var frequency1 = 0;
+        var frequency2 = 0;
+        var frequency3 = 0;
+        var frequency4 = 0;
+        var frequency5 = 0;
+        var frequency6 = 0;
+
 
         function start(){
             var button = document.getElementById( "rollButton" );
@@ -51,23 +60,54 @@
            dieImage.setAttribute("alt", "die with" + face + "spot(s)");
         }
 
-        
-        function rollDice(){
-            setImage(die1Image);
-            setImage(die2Image);
-            setImage(die3Image);
-            setImage(die4Image);
-            setImage(die5Image);
-            setImage(die6Image);
-            setImage(die7Image);
-            setImage(die8Image);
-            setImage(die9Image);
-            setImage(die10Image);
-            setImage(die11Image);
-            setImage(die12mage);
+        fuction tallyRolls(face){
+            switch (face){
+                case 1:
+                    ++frequency1;
+                    break;
+                case 2:
+                    ++frequency2;
+                    break;
+                case 3:
+                    ++frequency3;
+                    break;
+                case 4:
+                    ++frequency4
+                    break;
+                case 5:
+                    ++frequency5
+                    break;
+                case 6:
+                    ++frequency6
+                    break;
+            }
         }
 
-    </script>
 
-</body>
+
+
+        function updateFrequencyTable(){
+            var tableDiv = document.getElementById( "frequencyTableDiv" );
+
+            tableDiv.innerHTML = "<table>" +
+                                "<caption>Die Rolling Frequencies</caption>" + "<thead><th>Face</th><th>Frequency</th>" + "<th>
+                                    Percent</th></thead>"+
+                                "<tbody><tr> <td>1</td> <td>" + frequency1 + "</td> <td>" + Math.floor((frequency1/totalDice)*100) + "%"+"</td>
+                                    </tr>" + 
+                                       "<tr> <td>2</td> <td>" + frequency2 + "</td> <td>" + Math.floor((frequency2/totalDice)*100) + "%"+"</td>
+                                            </tr>" +
+                                       "<tr> <td>3</td> <td>" + frequency3 + "</td> <td>" + Math.floor((frequency3/totalDice)*100) + "%"+"</td>
+                                            </tr>" +
+                                       "<tr> <td>4</td> <td>" + frequency4 + "</td> <td>" + Math.floor((frequency4/totalDice)*100) + "%"+"</td>
+                                            </tr>" +
+                                       "<tr> <td>5</td> <td>" + frequency5 + "</td> <td>" + Math.floor((frequency5/totalDice)*100) + "%"+"</td>
+                                            </tr>" +
+                                       "<tr> <td>6</td> <td>" + frequency6 + "</td> <td>" + Math.floor((frequency6/totalDice)*100) + "%"+"</td>
+                                            </tr>" +
+                                "</tbody></table>";
+}// end function updateFrequencyTable
+
+             window.addEventListener( "load", start, false );
+        </script>
+    </body>
 </html>
