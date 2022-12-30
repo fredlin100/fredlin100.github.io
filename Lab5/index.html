@@ -29,8 +29,6 @@
 
     <script>
 
-        
-
         var frequency1 = 0;
         var frequency2 = 0;
         var frequency3 = 0;
@@ -39,28 +37,7 @@
         var frequency6 = 0;
         var totalDice = 0;
 
-        function start(){
-            var button = document.getElementById( "rollButton" );
-            button.addEventListener( "click", rollDice, false);
-        }
-
-        
-
-        function updateFrequencyTable(){
-            var tableDiv = document.getElementById( "frequencyTableDiv" );
-
-            tableDiv.innerHTML ="<table>" +
-                                "<caption>Die Rolling Frequencies</caption>" + "<thead><th>Face</th><th>Frequency</th>" + "<th>Percent</th></thead>"+
-                                "<tbody><tr> <td>1</td> <td>" + frequency1 + "</td> <td>" + Math.floor((frequency1/totalDice)*100) + "%"+"</td></tr>" + 
-                                       "<tr> <td>2</td> <td>" + frequency2 + "</td> <td>" + Math.floor((frequency2/totalDice)*100) + "%"+"</td></tr>" +
-                                       "<tr> <td>3</td> <td>" + frequency3 + "</td> <td>" + Math.floor((frequency3/totalDice)*100) + "%"+"</td></tr>" +
-                                       "<tr> <td>4</td> <td>" + frequency4 + "</td> <td>" + Math.floor((frequency4/totalDice)*100) + "%"+"</td></tr>" +
-                                       "<tr> <td>5</td> <td>" + frequency5 + "</td> <td>" + Math.floor((frequency5/totalDice)*100) + "%"+"</td></tr>" +
-                                       "<tr> <td>6</td> <td>" + frequency6 + "</td> <td>" + Math.floor((frequency6/totalDice)*100) + "%"+"</td></tr>" +
-                                "</tbody></table>";
-            }// end function updateFrequencyTable
-
-            function tallyRolls(face)
+        function tallyRolls(face)
             {
             switch (face)
             {
@@ -84,6 +61,27 @@
                     break;
             }
         }
+        
+
+        function updateFrequencyTable(){
+            var tableDiv = document.getElementById( "frequencyTableDiv" );
+
+            tableDiv.innerHTML ="<table>" +
+                                "<caption>Die Rolling Frequencies</caption>" + "<thead><th>Face</th><th>Frequency</th>" + "<th>Percent</th></thead>"+
+                                "<tbody><tr> <td>1</td> <td>" + frequency1 + "</td> <td>" + Math.floor((frequency1/totalDice)*100) + "%"+"</td></tr>" + 
+                                       "<tr> <td>2</td> <td>" + frequency2 + "</td> <td>" + Math.floor((frequency2/totalDice)*100) + "%"+"</td></tr>" +
+                                       "<tr> <td>3</td> <td>" + frequency3 + "</td> <td>" + Math.floor((frequency3/totalDice)*100) + "%"+"</td></tr>" +
+                                       "<tr> <td>4</td> <td>" + frequency4 + "</td> <td>" + Math.floor((frequency4/totalDice)*100) + "%"+"</td></tr>" +
+                                       "<tr> <td>5</td> <td>" + frequency5 + "</td> <td>" + Math.floor((frequency5/totalDice)*100) + "%"+"</td></tr>" +
+                                       "<tr> <td>6</td> <td>" + frequency6 + "</td> <td>" + Math.floor((frequency6/totalDice)*100) + "%"+"</td></tr>" +
+                                "</tbody></table>";
+            }// end function updateFrequencyTable
+
+            function setImage(dieNumber, face){
+           var dieImg = document.getElementById("die" + dieNumber);
+           dieImg.setAttribute("src", "die" + face + ".png");
+           dieImg.setAttribute("alt", "die with " + face + " spot(s)");
+        }
 
         function rollDice(){
             var face;
@@ -94,15 +92,16 @@
                 ++totalDice;
             }
             updateFrequencyTable();
+        }    
+
+        function start(){
+            var button = document.getElementById( "rollButton" );
+            button.addEventListener( "click", rollDice, false);
         }
 
-        function setImage(dieNumber, face){
-           var dieImg = document.getElementById("die" + dieNumber);
-           dieImg.setAttribute("src", "die" + face + ".png");
-           dieImg.setAttribute("alt", "die with " + face + " spot(s)");
-        }
+            
 
-        
+       
 
         
 
