@@ -7,14 +7,20 @@
 </head>
 <body>
 
+	<p id="first"></p>
+	<p id="second"></p>
+	<p id="third"></p>
+
 	<script>
-        var sentence;
-        sentence = window.prompt("input data")
+        var text;
+        text = window.prompt("input data")
         var char;
         char = window.prompt("input a char to search")
 
-        
-
+        document.getElementById("first").innerHTML = text.indexOf(char);
+		document.getElementById("second").innerHTML = text.lastIndexOf(char);
+		document.getElementById("third").innerHTML = text.indexOf(char, 3)
+// Houston, we have a problem
 
 
 </script>
