@@ -54,7 +54,7 @@
         }
 
         function setImage(dieNumber, face){
-           var face = document.getElementById("die" + dieNumber);
+           var dieImg = document.getElementById("die" + dieNumber);
            dieImg.setAttribute("src", "die" + face + ".png");
            dieImg.setAttribute("alt", "die with " + face + " spot(s)");
         }
