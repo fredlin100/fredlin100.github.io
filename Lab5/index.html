@@ -18,7 +18,7 @@
         <img id = "die8" src = "die1.png" alt = "die 8 image">
         <img id = "die9" src = "die1.png" alt = "die 9 image">
         <img id = "die10" src = "die1.png" alt = "die 10 image">
-        <img id = "diell" src = "die1.png" alt = "die 11 image">
+        <img id = "die11" src = "die1.png" alt = "die 11 image">
         <img id = "die12" src = "die1.png" alt = "die 12 image"></p>
     
     <form action ="#">
@@ -43,14 +43,16 @@
         }
 
         function rollDice(){
+            
             var face;
             for(var i = 1; i <= 12; ++i){
                 face = Math.floor(1+Math.random()*6);
                 setImage(i, face);
+                updateFrequencyTable();
                 tallyRolls(face);
                 ++totalDice;
             }
-            updateFrequencyTable();
+            
         }
 
         function setImage(dieNumber, face){
@@ -81,6 +83,7 @@
                 case 6:
                     ++frequency6;
                     break;
+                
             }
         }
         
@@ -98,8 +101,9 @@
                                        "<tr> <td>6</td> <td>" + frequency6 + "</td> <td>" + Math.floor((frequency6/totalDice)*100) + "%"+"</td></tr>" +
                                 "</tbody></table>";
             }// end function updateFrequencyTable
-
+            
             window.addEventListener( "load", start, false );
+            window.updateFrequencyTable();
         </script>
     </body>
 </html>
